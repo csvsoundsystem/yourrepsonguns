@@ -1,0 +1,24 @@
+{
+  "name": "yourrepsonguns",
+  "version": "0.0.1",
+  "description": "Implementation of mockingjay module for @YourRepsOnGuns Twitter account.",
+  "main": "yourrepsonguns.js",
+  "dependencies": {
+    "mockingjay": "~0.1.1",
+    "twit": "~1.1.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/csvsoundsystem/yourrepsonguns.git"
+  },
+  "author": "Michael Keller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csvsoundsystem/yourrepsonguns/issues"
+  },
+  "homepage": "https://github.com/csvsoundsystem/yourrepsonguns",
+}
