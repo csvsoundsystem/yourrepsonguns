@@ -21,7 +21,7 @@ mockingjay.retweet(opts, function(err, result){
 		tweet_msg = 'YROG ' + this_moment +'\n' + err.allErrors;
 	}
 
-	tweet(msg);
+	tweet(tweet_msg);
 })
 
 function tweet(msg){
