@@ -1,7 +1,7 @@
 {
   "name": "yourrepsonguns",
   "version": "0.0.1",
-  "description": "Implementation of mockingjay module for @YourRepsOnGuns Twitter account.",
+  "description": "Mockingjay implementation for @YourRepsOnGuns Twitter account.",
   "main": "yourrepsonguns.js",
   "dependencies": {
     "mockingjay": "~0.1.1",
