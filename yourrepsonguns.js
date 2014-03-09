@@ -7,24 +7,28 @@ var yourReps_credentials  = require('./path/to/yourreps/credentials.json'),
 var opts         = require('./config.json');
 opts.credentials = yourReps_credentials;
 
-var T = new Twit(reporter_credentials)
+var T = new Twit(reporter_credentials);
 
 mockingjay.retweet(opts, function(err, result){
-	console.log(err, result)
-	
-	var this_moment = new Date();
+	var this_moment = new Date(),
+			tweet_msg;
+
 	if (!err){
-    	T.post('statuses/update', { status: 'YROG ' + this_moment +'\nRetweeted: ' + result.retweeted_matches + '\nSince last: ' + result.since_last + '\nMatches: ' + result.matches}, function(error, reply) {
-    		if (error){
-				  console.log('YROG Twit error\n', error)
-    		}
-			})
+		console.log('YROG ' + result);
+		tweet_msg = 'YROG ' + this_moment +'\nRetweeted: ' + result.retweeted_matches + '\nSince last: ' + result.since_last + '\nMatches: ' + result.matches;
 	}else{
-		console.log('YROG Error ' + err)
-	 	T.post('statuses/update', { status: 'YROG ' + this_moment +'\n' + err.allErrors }, function(error, reply) {
-			if (error){
-			  console.log('YROG Twit error\n' + error)
-			}
-		})
+		console.log('YROG ' + err);
+		tweet_msg = 'YROG ' + this_moment +'\n' + err.allErrors;
 	}
+
+	tweet(msg);
 })
+
+function tweet(msg){
+	T.post('statuses/update', { status: msg}, function(error, reply) {
+		if (error){
+		  console.log('YROG Twit error\n', error);
+		  tweet('YROG Twit Error');
+		}
+	})
+}
