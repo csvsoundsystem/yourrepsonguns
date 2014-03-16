@@ -15,7 +15,7 @@ mockingjay.retweet(opts, function(err, result){
 
 	if (!err){
 		console.log('YROG ' + result);
-		tweet_msg = 'YROG ' + this_moment +'\nRetweeted: ' + result.retweeted_matches + '\nSince last: ' + result.since_last + '\nMatches: ' + result.matches;
+		tweet_msg = 'YROG ' + this_moment +'\nRetweeted: ' + result.retweeted_matches + '\nSince last: ' + result.since_last + '\nMatches: ' + result.matching;
 	}else{
 		console.log('YROG ' + err);
 		tweet_msg = 'YROG ' + this_moment +'\n' + err.allErrors;
