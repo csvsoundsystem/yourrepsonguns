@@ -14,11 +14,11 @@ mockingjay.retweet(opts, function(err, result){
 			tweet_msg;
 
 	if (!err){
-		console.log('YROG ' + result);
+		console.log('YROG ' + JSON.stringify(result) );
 		tweet_msg = 'YROG ' + this_moment +'\nRetweeted: ' + result.retweeted_matches + '\nSince last: ' + result.since_last + '\nMatches: ' + result.matching;
 	}else{
-		console.log('YROG ' + err);
-		tweet_msg = 'YROG ' + this_moment +'\n' + err.allErrors;
+		console.log('YROG ' + JSON.stringify(err) );
+		tweet_msg = 'YROG ' + this_moment +'\n' + JSON.stringify(err.allErrors);
 	}
 
 	tweet(tweet_msg);
@@ -27,7 +27,7 @@ mockingjay.retweet(opts, function(err, result){
 function tweet(msg){
 	T.post('statuses/update', { status: msg}, function(error, reply) {
 		if (error){
-		  console.log('YROG Twit error\n', error);
+		  console.log('YROG Twit error\n', JSON.stringify(error) );
 		  tweet('YROG Twit Error');
 		}
 	})
