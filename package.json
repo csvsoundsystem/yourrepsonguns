@@ -4,7 +4,7 @@
   "description": "Mockingjay implementation for @YourRepsOnGuns Twitter account.",
   "main": "yourrepsonguns.js",
   "dependencies": {
-    "mockingjay": "~1.2.1",
+    "mockingjay": "~1.1.2",
     "twit": "~1.1.12"
   },
   "devDependencies": {},
